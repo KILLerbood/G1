@@ -1,0 +1,101 @@
+/*
+ * G1 «Focus» — design tokens.
+ * Identity: «Paper & Vermilion». Warm newsprint paper, near-black ink, ONE strong accent (vermilion, the editor's red pencil).
+ * Hairline rules instead of shadows, square-ish corners, big display type, generous whitespace.
+ * Light is the default; «Night paper» is the optional dark theme.
+ */
+:root, [data-theme='light'] {
+  --bg: #f3efe6;
+  --paper: #fbf9f4;
+  --card: #fbf9f4;
+  --card-2: #efe9dd;
+  --card-hover: #f7f3ea;
+  --sunken: #ebe5d8;
+  --line: #ddd5c5;
+  --line-2: #c9bfac;
+  --rule: #17140f;
+  --ink: #17140f;
+  --ink-2: #4a4337;
+  --ink-3: #6b6355;
+  --accent: #d1361b;
+  --accent-ink: #ffffff;
+  --accent-2: #b02a12;
+  --accent-soft: rgba(209, 54, 27, .09);
+  --accent-line: rgba(209, 54, 27, .35);
+  --highlight: #17140f;
+  --highlight-ink: #fbf9f4;
+  --highlight-ink-2: rgba(251, 249, 244, .72);
+  --active: #17140f;
+  --active-ink: #fbf9f4;
+  --good: #1f6b43; --good-soft: #e1eee3;
+  --warn: #8f5508; --warn-soft: #f6ead2;
+  --bad: #b3261e;  --bad-soft: #f8e1dd; --bad-solid: #b3261e;
+  --cnt-ink: #ffffff;
+  --info: #2c4fa3; --info-soft: #e3e8f4;
+  --glass: rgba(243, 239, 230, .9);
+  --scrim: rgba(23, 20, 15, .38);
+  --shadow-pop: 0 1px 0 var(--line), 0 24px 60px -18px rgba(23, 20, 15, .28);
+  --shadow-card: 0 1px 0 rgba(23, 20, 15, .04);
+  --heat-0: #e3dccd; --heat-1: #d8c6b2; --heat-2: #d4ab92; --heat-3: #d98d6e; --heat-4: #dc6b4c; --heat-5: #d74c2d; --heat-6: #b8341a; --heat-7: #1f6b43;
+  --hatch: rgba(23, 20, 15, .06);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0 0.06 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  color-scheme: light;
+}
+[data-theme='dark'] {
+  --bg: #12110e;
+  --paper: #1b1915;
+  --card: #1b1915;
+  --card-2: #24211c;
+  --card-hover: #211e19;
+  --sunken: #0e0d0b;
+  --line: #2f2b24;
+  --line-2: #474034;
+  --rule: #f1ebdf;
+  --ink: #f1ebdf;
+  --ink-2: #c3baa8;
+  --ink-3: #9a917f;
+  --accent: #ff6a4a;
+  --accent-ink: #12110e;
+  --accent-2: #ff8a6e;
+  --accent-soft: rgba(255, 106, 74, .13);
+  --accent-line: rgba(255, 106, 74, .45);
+  --highlight: #f1ebdf;
+  --highlight-ink: #12110e;
+  --highlight-ink-2: rgba(18, 17, 14, .7);
+  --active: #f1ebdf;
+  --active-ink: #12110e;
+  --good: #6fcf97; --good-soft: rgba(111, 207, 151, .13);
+  --warn: #f0b45c; --warn-soft: rgba(240, 180, 92, .13);
+  --bad: #ff7a6b;  --bad-soft: rgba(255, 122, 107, .13); --bad-solid: #c4332a;
+  --cnt-ink: #12110e;
+  --info: #8fb0ff; --info-soft: rgba(143, 176, 255, .13);
+  --glass: rgba(18, 17, 14, .88);
+  --scrim: rgba(0, 0, 0, .6);
+  --shadow-pop: 0 0 0 1px var(--line), 0 24px 60px -12px rgba(0, 0, 0, .7);
+  --shadow-card: none;
+  --heat-0: #2f2b24; --heat-1: #4a3a2c; --heat-2: #6a4430; --heat-3: #8c4b33; --heat-4: #b05236; --heat-5: #d75a3a; --heat-6: #ff6a4a; --heat-7: #6fcf97;
+  --hatch: rgba(241, 235, 223, .05);
+  --grain: none;
+  color-scheme: dark;
+}
+:root {
+  /* The old gradient tokens are flattened: G1 has one accent, no gradients. */
+  --m-y: var(--accent); --m-o: var(--accent); --m-p: var(--accent); --m-v: var(--ink); --m-b: var(--info);
+  --grad: var(--accent);
+  --grad-btn: var(--accent);
+  --grad-soft: var(--card-2);
+  --dot-1: var(--line-2); --dot-2: #d9a07f; --dot-3: #db7a59; --dot-4: #d75a3a; --dot-5: var(--accent);
+
+  --f-display: 'Space Grotesk', 'El Messiri', 'Tajawal', system-ui, sans-serif;
+  --f-display-ar: 'El Messiri', 'Tajawal', system-ui, sans-serif;
+  --f-body: 'Inter', 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+  --f-num: 'Space Grotesk', 'Inter', sans-serif;
+
+  /* Corners: near-square, like cut paper. */
+  --r-card: 6px; --r-l: 6px; --r-m: 5px; --r-s: 4px; --r-xs: 3px; --r-pill: 4px; --r-round: 999px;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  --t-fast: 140ms; --t-med: 220ms; --t-slow: 360ms;
+  --header-h: 60px; --rail-w: 232px;
+  --gutter: clamp(16px, 3.2vw, 48px);
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 72px;
+}
